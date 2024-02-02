@@ -1,6 +1,29 @@
 ﻿Dictionary<string, List<int>> bandas = new Dictionary<string, List<int>>();
 
-Menu();
+// Menu();
+
+Banda queen = new Banda("Queen");
+Album albumDoQueen = new Album("A night at the opera");
+Musica musica1 = new Musica("Love of my life", queen)
+{
+  Duracao = 213,
+  Disponivel = true,
+};
+
+Musica musica2 = new Musica("Bohemian Rhapsody", queen)
+{
+  Duracao = 354,
+  Disponivel = false
+};
+
+albumDoQueen.AdicionarMusica(musica1);
+albumDoQueen.AdicionarMusica(musica2);
+queen.AdicionarAlbum(albumDoQueen);
+
+musica1.ExibirFichaTecnica();
+musica2.ExibirFichaTecnica();
+albumDoQueen.ExibirMusicasDoAlbum();
+queen.ExibirDiscografia();
 
 void Menu()
 {

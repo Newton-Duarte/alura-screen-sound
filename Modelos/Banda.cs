@@ -3,6 +3,14 @@ class Banda
   private List<Album> Albuns = new List<Album>();
   private List<Avaliacao> Notas = new List<Avaliacao>();
   public string Nome { get; }
+  public double Media
+  {
+    get
+    {
+      if (Notas.Count > 0) return Notas.Average((nota) => nota.Nota);
+      else return 0;
+    }
+  }
 
   public Banda(string nome)
   {
@@ -21,10 +29,10 @@ class Banda
 
   public void ExibirDiscografia()
   {
-    Console.WriteLine($"Discografia da banda: {Nome} ({Notas.Average((nota) => nota.Nota)})");
+    Console.WriteLine($"Discografia da banda: {Nome} ({Media})");
     foreach(Album album in Albuns)
     {
-      Console.WriteLine($"Álbum: {album.Nome} ({album.DuracaoTotal})");
+      Console.WriteLine($"- Álbum: {album.Nome}");
     }
   }
 }

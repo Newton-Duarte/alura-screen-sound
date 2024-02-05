@@ -1,37 +1,6 @@
 ﻿Dictionary<string, List<int>> bandas = new Dictionary<string, List<int>>();
 
-// Menu();
-
-// Banda queen = new Banda("Queen");
-// Album albumDoQueen = new Album("A night at the opera");
-// Musica musica1 = new Musica("Love of my life", queen)
-// {
-//   Duracao = 213,
-//   Disponivel = true,
-// };
-
-// Musica musica2 = new Musica("Bohemian Rhapsody", queen)
-// {
-//   Duracao = 354,
-//   Disponivel = false
-// };
-
-// albumDoQueen.AdicionarMusica(musica1);
-// albumDoQueen.AdicionarMusica(musica2);
-// queen.AdicionarAlbum(albumDoQueen);
-
-// musica1.ExibirFichaTecnica();
-// musica2.ExibirFichaTecnica();
-// albumDoQueen.ExibirMusicasDoAlbum();
-// queen.ExibirDiscografia();
-
-Podcast devSemFronteiras = new Podcast("Dev Sem Fronteiras", "Newton Duarte");
-Episodio episodio1 = new Episodio(1, "Como se tornar um dev sem fronteiras", 45);
-episodio1.AdicionarConvidado("John Doe");
-episodio1.AdicionarConvidado("Jane Doe");
-
-devSemFronteiras.AdicionarEpisodio(episodio1);
-devSemFronteiras.ExibirDetalhes();
+Menu();
 
 void Menu()
 {
@@ -58,6 +27,9 @@ void Menu()
       break;
     case 4:
       ExibirMediaDaBanda();
+      break;
+    case 9:
+      Console.WriteLine("Tchau tchau! :)");
       break;
     default:
       Console.WriteLine("Opção inválida");

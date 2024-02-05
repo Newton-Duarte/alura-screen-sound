@@ -1,8 +1,9 @@
-class Banda
+class Banda : IAvaliavel
 {
-  private List<Album> Albuns = new List<Album>();
+  private List<Album> albuns = new List<Album>();
   private List<Avaliacao> Notas = new List<Avaliacao>();
   public string Nome { get; }
+  public List<Album> Albuns => albuns;
   public double Media
   {
     get
@@ -19,10 +20,10 @@ class Banda
 
   public void AdicionarAlbum(Album album)
   {
-    Albuns.Add(album);
+    albuns.Add(album);
   }
 
-  public void AvaliarBanda(Avaliacao nota)
+  public void AdicionarNota(Avaliacao nota)
   {
     Notas.Add(nota);
   }
@@ -30,7 +31,7 @@ class Banda
   public void ExibirDiscografia()
   {
     Console.WriteLine($"Discografia da banda: {Nome} ({Media})");
-    foreach(Album album in Albuns)
+    foreach(Album album in albuns)
     {
       Console.WriteLine($"- Álbum: {album.Nome}");
     }

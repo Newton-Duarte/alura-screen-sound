@@ -4,8 +4,9 @@ Dictionary<int, Menu> opcoes = new Dictionary<int, Menu>();
 opcoes.Add(1, new MenuRegistrarBanda());
 opcoes.Add(2, new MenuRegistrarAlbum());
 opcoes.Add(3, new MenuAvaliarBanda());
-opcoes.Add(4, new MenuListarBandas());
-opcoes.Add(5, new MenuExibirDetalhes());
+opcoes.Add(4, new MenuAvaliarAlbum());
+opcoes.Add(5, new MenuListarBandas());
+opcoes.Add(6, new MenuExibirDetalhes());
 opcoes.Add(9, new MenuSair());
 
 Menu();
@@ -16,8 +17,9 @@ void Menu()
   Console.WriteLine("1 - Registrar banda");
   Console.WriteLine("2 - Registrar album");
   Console.WriteLine("3 - Avaliar banda");
-  Console.WriteLine("4 - Listar bandas");
-  Console.WriteLine("5 - Exibir detalhes da banda");
+  Console.WriteLine("4 - Avaliar banda");
+  Console.WriteLine("5 - Listar bandas");
+  Console.WriteLine("6 - Exibir detalhes da banda");
   Console.WriteLine("9 - Sair");
   Console.Write("\nDigite a opção: ");
   

@@ -1,4 +1,4 @@
-﻿Dictionary<string, List<int>> bandas = new Dictionary<string, List<int>>();
+﻿Dictionary<string, Banda> bandas = new Dictionary<string, Banda>();
 
 Menu();
 
@@ -55,7 +55,7 @@ void RegistrarBanda()
   Console.Write("Informe o nome da banda: ");
   string nome = Console.ReadLine()!;
   
-  bandas.Add(nome, new List<int>());
+  bandas.Add(nome, new Banda(nome));
   Console.WriteLine("\nBanda registrada com sucesso!");
   BackToMenu();
 }
@@ -82,9 +82,9 @@ void AvaliarBanda()
 
   if (bandas.ContainsKey(nome)) {
     Console.Write("Informe uma nota para a banda: ");
-    int nota = int.Parse(Console.ReadLine()!);
+    Avaliacao nota = Avaliacao.Parse(Console.ReadLine()!);
     
-    bandas[nome].Add(nota);
+    bandas[nome].AvaliarBanda(nota);
   }
   else {
     Console.WriteLine("Banda não encontrada!");
@@ -101,9 +101,7 @@ void ExibirMediaDaBanda()
   string nome = Console.ReadLine()!;
 
   if (bandas.ContainsKey(nome)) {
-    double media = bandas[nome].Average();
-    
-    Console.WriteLine($"A média da banda {nome} é: {media.ToString("F2")}");
+    bandas[nome].ExibirDiscografia();
   }
   else {
     Console.WriteLine("Banda não encontrada!");

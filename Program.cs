@@ -15,9 +15,9 @@ void Menu()
 {
   Title(@"Bem-vindo ao Screen Sound");
   Console.WriteLine("1 - Registrar banda");
-  Console.WriteLine("2 - Registrar album");
+  Console.WriteLine("2 - Registrar álbum");
   Console.WriteLine("3 - Avaliar banda");
-  Console.WriteLine("4 - Avaliar banda");
+  Console.WriteLine("4 - Avaliar álbum");
   Console.WriteLine("5 - Listar bandas");
   Console.WriteLine("6 - Exibir detalhes da banda");
   Console.WriteLine("9 - Sair");
